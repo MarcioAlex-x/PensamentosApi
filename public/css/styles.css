@@ -164,6 +164,10 @@ form input[type='submit']:hover,
     margin-bottom: 1.5em;
 }
 
+.dashboard a{
+    color: #f6982d;
+}
+
 .dashboard ul{
     list-style: none;
 }

@@ -42,4 +42,5 @@ module.exports = class PensamentoController {
       res.render("painel/painel");
     }
   }
+
 };

@@ -4,6 +4,7 @@ const exphbs = require("express-handlebars");
 const session = require("express-session");
 const FileStore = require("session-file-store")(session);
 const flash = require("express-flash");
+// const core = reaquire('core')
 
 // Models
 const Pesnamento = require("./models/Pensamento");
@@ -17,6 +18,7 @@ const painelRoutes = require("./routes/painelRoutes");
 // inicialização do app
 const app = express();
 
+// app.use(core())
 // conexão
 const conn = require("./db/conn");
 const PensamentoController = require("./controllers/PensamentoController");

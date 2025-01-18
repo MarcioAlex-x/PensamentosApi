@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const Pensamento = require("../models/Pensamento");
+const { raw } = require("express");
 
 module.exports = class PainelController {
   static async showPainel(req, res) {
@@ -40,5 +41,19 @@ module.exports = class PainelController {
       );
       res.render("/");
     }
+  }
+  
+  static async updatePainel(req, res){
+    const id = req.params.id
+    try{
+      const pensamento = await Pensamento.findOne({ where:{ id } })
+      res.render('painel/update', { pensamento, raw: true })
+      console.log(pensamento)
+      
+    }catch(err){
+      console.log('Erro: ', err)
+    }
+    
+    
   }
 };

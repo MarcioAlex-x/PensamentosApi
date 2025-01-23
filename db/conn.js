@@ -16,9 +16,3 @@ async function testConnection() {
   testConnection();
 
 module.exports = sequelize
-
-// senha de produção = fS2tjHyHq9qo 
-// usuário de produção = if0_38119464
-// database_name = if0_38119464_XXX
-// hostanme = sql205.infinityfree.com
-// porta = 3306

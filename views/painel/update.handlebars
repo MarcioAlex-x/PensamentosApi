@@ -1,2 +1,12 @@
-<p>olá</p>
-<p>{{pensamento.dataValues.title}}</p>
+
+<div class="pensamento-form-container">
+    <h1>Atualizando: {{pensamento.dataValues.title}}</h1>
+    <form action="/pensamentos/update" method="post">
+        <div class="form-control">
+            <label for="title">Titulo:</label>
+            <input type="hidden" name="id" value="{{pensamento.id}}">
+            <input type="text" name="title" value="{{pensamento.title}}">
+        </div>
+        <input type="submit" value="Salvar" class="btn">
+    </form>
+</div>

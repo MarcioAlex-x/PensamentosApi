@@ -9,7 +9,10 @@ module.exports = class PainelController {
       where: {
         id: userId,
       },
-      include: Pensamento,
+      include: {
+        model:Pensamento,
+        order:[['createdAt','DESC']]
+      },
       plain: true,
     });
     if (!user) {
@@ -42,18 +45,16 @@ module.exports = class PainelController {
       res.render("/");
     }
   }
-  
-  static async updatePainel(req, res){
-    const id = req.params.id
-    try{
-      const pensamento = await Pensamento.findOne({ where:{ id } })
-      res.render('painel/update', { pensamento, raw: true })
-      console.log(pensamento)
-      
-    }catch(err){
-      console.log('Erro: ', err)
+
+  static async updatePainel(req, res) {
+    const id = req.params.id;
+    try {
+      const pensamento = await Pensamento.findOne({ where: { id }, raw: true });
+
+      res.render("painel/update", { pensamento });
+      // console.log(pensamento)
+    } catch (err) {
+      console.log("Erro: ", err);
     }
-    
-    
   }
 };
